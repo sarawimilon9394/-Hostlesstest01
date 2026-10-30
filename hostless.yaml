@@ -1,5 +1,8 @@
 build:
   system: auto
+  command: "CGO_ENABLED=0 GOOS=linux go build -trimpath -tags netgo,osusergo -ldflags='-s -w' -o out ."
+
+start_command: "./out"
 
 scaling:
   trigger: http_requests
