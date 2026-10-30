@@ -1,14 +1,5 @@
-
 build:
   system: auto
-  command: "CGO_ENABLED=0 GOOS=linux go build -trimpath -tags netgo,osusergo -ldflags='-s -w' -o ./bin/bermuda-portal . && ./bin/bermuda-portal --prefetch-worker"
-  min_cpu: 0.5
-  max_cpu: 2
-  min_memory: 512
-  max_memory: 2048
-
-working_directory: "/"
-start_command: "./bin/bermuda-portal"
 
 scaling:
   trigger: http_requests
